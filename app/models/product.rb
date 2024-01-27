@@ -8,4 +8,5 @@ class Product < ApplicationRecord
   validates :details, presence: true
   validates :price_per_day, presence: true, comparison: { greater_than: 0 }
   validates :details, presence: true
+  validates :photo, presence: true
 end
