@@ -1,0 +1,9 @@
+<h1>Create new product</h1>
+<%= simple_form_for @product do |f| %>
+  <%= f.input :category %>
+  <%= f.input :name %>
+  <%= f.input :details %>
+  <%= f.input :price_per_day %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+<% end %>
