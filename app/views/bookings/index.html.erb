@@ -1,1 +1,9 @@
 <h1>All my bookings</h1>
+<% @bookings.each do |b| %>
+  <h3><%= b.product.name %></h3>
+  <p>loué à <%= b.user.email %></p>
+  <p>par <%= b.product.user.email %></p>
+  <p><%= "du #{b.start_date} au #{b.end_date}" %></p>
+  <p>Prix: <%= b.product.price_per_day * ((b.end_date - b.start_date)/86_400).ceil %>€</p>
+  <%= button_to  %>
+<% end %>
