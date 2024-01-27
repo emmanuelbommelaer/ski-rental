@@ -1,1 +1,7 @@
 <h1>hello from index products</h1>
+
+<% @products.each do |product| %>
+  <p><%= product.name %></p>
+  <%= cl_image_tag(product.photo.key) %>
+  <%= link_to "See details", product_path(product) %>
+<% end %>
