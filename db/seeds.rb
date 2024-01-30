@@ -10,6 +10,9 @@
 admin = User.new(email: "admin@ski-rental.com", password: "123456", first_name: "Candide", last_name: "Thovex", address: "120 rue du Mont-Blanc 74028 Chamonix")
 admin.save!
 
+renter = User.new(email: "manu@nulenski.com", password: "234567", first_name: "Emmanuel", last_name: "Bommelaer", address: "9 rue des Ecuyers 78100 SGEL")
+renter.save!
+
 product = Product.new()
 product.category = "Ski"
 product.name = "Mc Kinley"
@@ -50,7 +53,7 @@ booking.save!
 
 
 booking = Booking.new()
-booking.user = admin
+booking.user = renter
 booking.product = Product.second
 booking.status = "Pending"
 booking.start_date = DateTime.current + 2
