@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.user = current_use
+    @booking.user = current_user
     @booking.product = params[:id]
     if @booking.save
       flash[:success] = "Object successfully created"
