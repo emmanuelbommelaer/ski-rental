@@ -39,3 +39,20 @@ product.user = admin
 file = URI.open("https://backend.intersport-rent.fr/media/image/9e/97/4bb122a7372b57163d09110febd4.png")
 product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
 product.save!
+
+booking = Booking.new()
+booking.user = admin
+booking.product = Product.first
+booking.status = "Pending"
+booking.start_date = DateTime.current + 1
+booking.end_date = DateTime.current + 3
+booking.save!
+
+
+booking = Booking.new()
+booking.user = admin
+booking.product = Product.second
+booking.status = "Pending"
+booking.start_date = DateTime.current + 2
+booking.end_date = DateTime.current + 8
+booking.save!
