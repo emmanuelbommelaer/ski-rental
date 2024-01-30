@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-  # before_action :set_product, only: [:create]
-
   def new
     @booking = Booking.new
   end
@@ -29,10 +27,6 @@ class BookingsController < ApplicationController
   end
 
   private
-
-  def set_product
-    @product = Product.find(params[:id])
-  end
 
   def booking_params
     params.require(:booking).permit(:status, :start_date, :end_date)
