@@ -6,13 +6,14 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.product = params[:id]
+    @booking.product_id = params[:product_id]
+    @booking.status = "pending"
     if @booking.save
       flash[:success] = "Object successfully created"
-      redirect_to booking_path(@booking)
+      redirect_to bookings_path
     else
       flash[:error] = "Something went wrong"
-      render 'new'
+      redirect_to product_path(params[:product_id]), status: :unprocessable_entity
     end
   end
 
@@ -28,7 +29,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :start_date, :end_date)
+    params.require(:booking).permit(:status, :start_date, :end_date, :product_id)
   end
 
 end
