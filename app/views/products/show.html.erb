@@ -3,3 +3,6 @@
 <p><%= @product.details %></p>
 <p><%= @product.price_per_day %></p>
 <%= cl_image_tag(@product.photo.key) %>
+
+<h2>Book this product</h2>
+<%= render "bookings/form" %>
