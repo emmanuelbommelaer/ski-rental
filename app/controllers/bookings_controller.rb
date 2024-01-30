@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user: current_user)
+    @owned_bookings = Booking.joins(:product).where(product: { user: current_user })
   end
 
   def change_status
