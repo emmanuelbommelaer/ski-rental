@@ -5,5 +5,7 @@
   <%= f.input :end_date,
               as: :string,
               input_html: {data: {controller: "datepicker"}} %>
-  <%= f.button :submit %>
+  <div class="d-grid mt-4">
+    <%= f.button :submit, class:"btn btn-primary" %>
+  </div>
 <% end %>
