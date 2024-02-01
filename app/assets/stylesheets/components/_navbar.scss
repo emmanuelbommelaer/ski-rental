@@ -1,12 +1,13 @@
-.navbar-lewagon {
+.navbar-ski-rental {
   justify-content: space-between;
   background: white;
+  height: 60px
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-ski-rental .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.navbar-ski-rental .navbar-brand img {
+  height: 60px;
 }
