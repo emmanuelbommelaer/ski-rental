@@ -1,10 +1,13 @@
 <div class="container">
   <h1 class="mb-3"><%= @product.name %></h1>
-  <div class="row gx-5">
+  <div class="row gx-5 mb-4">
     <div class="col-8">
-      <span class="category-tag"><%= @product.category %></span>
+      <span class="category-tag mb-3"><%= @product.category %></span>
       <p><%= @product.details %></p>
-      <%= cl_image_tag(@product.photo.key, :background=>"#F4F4F4") %>
+      <%= cl_image_tag(@product.photo.key,
+                        :background=>"#F4F4F4",
+                        height: 350,
+                        crop: :fill) %>
     </div>
     <div class="col-4 booking-card">
       <h2 class="mb-3">Book this product</h2>
@@ -12,4 +15,5 @@
       <%= render "bookings/form" %>
     </div>
   </div>
+  <%= link_to "Back to products", products_path %>
 </div>
