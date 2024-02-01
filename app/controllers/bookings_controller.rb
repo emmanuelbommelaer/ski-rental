@@ -4,16 +4,17 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @product = Product.find(params[:product_id])
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.product_id = params[:product_id]
+    @booking.product = @product
     @booking.status = "Pending"
     if @booking.save
       flash[:success] = "Object successfully created"
       redirect_to bookings_path
     else
       flash[:error] = "Something went wrong"
-      redirect_to product_path(params[:product_id]), status: :unprocessable_entity
+      render "products/show", status: :unprocessable_entity
     end
   end
 
