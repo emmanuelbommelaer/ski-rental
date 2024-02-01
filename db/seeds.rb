@@ -43,12 +43,61 @@ file = URI.open("https://backend.intersport-rent.fr/media/image/9e/97/4bb122a737
 product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
 product.save!
 
+product = Product.new()
+product.category = "Snowboard"
+product.name = "Salomon"
+product.details = "Introducing the Salomon Pulse Snowboard, a high-performance companion for riders seeking an exhilarating mountain experience. Crafted with precision and innovation, this board seamlessly blends cutting-edge technology with a versatile design. The Pulse features a directional twin shape, providing stability and control for riders of all levels while excelling in various terrains."
+product.price_per_day = 25
+product.user = admin
+file = URI.open("https://backend.intersport-rent.fr/media/image/f1/48/c4df024b7876bc7a4f41c69ff6ca.png")
+product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
+product.save!
+
+product = Product.new()
+product.category = "Snowboard"
+product.name = "Hype snowboard for women"
+product.details = "the Hype Snowboard for women – a stylish and high-performance companion designed to elevate your winter adventures. This board seamlessly blends fashion with function, featuring a directional shape for stability and control on various terrains. The Hype's Hybrid Rocker profile ensures a playful yet responsive ride, perfect for riders of all levels. Crafted with a lightweight and durable wood core, this board offers a harmonious balance of flexibility and strength."
+product.price_per_day = 23
+product.user = admin
+file = URI.open("https://backend.intersport-rent.fr/media/image/08/c2/7448a8537ab130dfaae1a2160890.png")
+product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
+product.save!
+
+product = Product.new()
+product.category = "Boots"
+product.name = "Aurora boots for women"
+product.details = "This Aurora Boots are a perfect fusion of style and performance tailored specifically for women who crave adventure on the slopes. The Aurora Boots feature a sleek design that effortlessly complements your winter wardrobe, while their women-specific fit ensures optimal comfort and control during every ride. The quick-lacing system allows for easy and precise adjustments, so you can spend less time gearing up and more time carving through the snow."
+product.price_per_day = 15
+product.user = admin
+file = URI.open("https://backend.intersport-rent.fr/media/image/1a/6c/c120454d9a6ea1d5f793910f7754.png")
+product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
+product.save!
+
+product = Product.new()
+product.category = "Boots"
+product.name = "Black and white perfect for rainy days"
+product.details = "The RainDancer Boots boast a waterproof and breathable membrane, keeping your feet comfortably protected against wet conditions. The quick-lacing system allows for hassle-free adjustments, while the heat-moldable liner ensures a personalized and snug fit. Lightweight yet rugged, these boots provide the perfect balance of agility and durability. Conquer the slopes in style with the RainDancer Snowboard Boots by Hype – where fashion meets resilience for a confident ride in any weather."
+product.price_per_day = 15
+product.user = admin
+file = URI.open("https://backend.intersport-rent.fr/media/image/1a/6c/c120454d9a6ea1d5f793910f7754.png")
+product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
+product.save!
+
+
 booking = Booking.new()
 booking.user = admin
 booking.product = Product.first
 booking.status = "Pending"
 booking.start_date = DateTime.current + 1
 booking.end_date = DateTime.current + 3
+booking.save!
+
+booking = Booking.new()
+booking.user = admin
+booking.product = Product.last
+booking.status = "Pending"
+booking.start_date = DateTime.current + 3
+booking.end_date = DateTime.current + 10
 booking.save!
 
 
