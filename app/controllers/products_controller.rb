@@ -9,6 +9,10 @@ class ProductsController < ApplicationController
     @booking = Booking.new
   end
 
+  def index_owned
+    @products = Product.where(user: current_user)
+  end
+
   def new
     @product = Product.new
   end
