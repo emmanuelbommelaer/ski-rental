@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Add a new product to rent</h1>
   <%= simple_form_for @product do |f| %>
-    <%= f.input :category %>
+    <%= f.input :category, :collection => Product::PRODUCT_CATEGORIES %>
     <%= f.input :name %>
     <%= f.input :details %>
     <%= f.input :price_per_day %>

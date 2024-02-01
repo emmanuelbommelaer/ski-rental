@@ -7,7 +7,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.product_id = params[:product_id]
-    @booking.status = "pending"
+    @booking.status = "Pending"
     if @booking.save
       flash[:success] = "Object successfully created"
       redirect_to bookings_path
@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user: current_user)
   end
-  
+
   def sales_index
     @owned_bookings = Booking.joins(:product).where(product: { user: current_user })
   end
