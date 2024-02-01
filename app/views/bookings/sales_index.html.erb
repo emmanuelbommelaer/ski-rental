@@ -1,9 +1,9 @@
 <div class="container">
 <div class="d-flex justify-content-between">
-  <h2 class="mb-4">All my bookings</h2>
+  <h2 class="mb-4">My sales portfolio</h2>
   <%= link_to "Back to products", products_path %>
 </div>
-  <% @bookings.each do |b| %>
+  <% @owned_bookings.each do |b| %>
     <div class="booking-line row">
       <div class="col-1">
         <%= cl_image_tag(b.product.photo.key,
@@ -24,8 +24,11 @@
       <div class="col-2">
         Prix total: <%= b.product.price_per_day * ((b.end_date - b.start_date)/86_400).ceil %>€
       </div>
-      <div class="col-3">
-        Loué à <%= b.user.first_name %> <%= b.user.last_name %>, habitant à <%= b.user.address %>
+      <div class="col-2">
+        Loué à <%= b.user.first_name %> <%= b.user.last_name %>
+      </div>
+      <div class="col-1">
+        <span class="status-tag"><%= b.status %></span>
       </div>
     </div>
     <% end %>

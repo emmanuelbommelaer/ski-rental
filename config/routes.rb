@@ -8,4 +8,6 @@ Rails.application.routes.draw do
 
   get "/bookings", to: "bookings#index"
   patch "/bookings/:id", to: "bookings#change_status"
+
+  get "/sales", to:"bookings#sales_index"
 end
