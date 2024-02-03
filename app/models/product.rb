@@ -4,6 +4,13 @@ class Product < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 
+  # include AlgoliaSearch
+
+  # algoliasearch do
+  #   attributes :name, :category, :details
+  #   tags 'category'
+  # end
+
   validates :name, presence: true
   validates :category, presence: true, inclusion: { in: PRODUCT_CATEGORIES }
   validates :details, presence: true

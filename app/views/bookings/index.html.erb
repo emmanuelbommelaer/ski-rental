@@ -30,8 +30,8 @@
       <div class="col-2">
         Address: <%= b.user.address %>
       </div>
-      <div class="col-1">
-        <span class="status-tag"><%= b.status %></span>
+      <div class="col-1" data-controller="validate">
+        <span data-validate-target="validateElement" data-action="load@window->validate#colorize" class="status-tag"><%= b.status %></span>
       </div>
     </div>
     <% end %>
