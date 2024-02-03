@@ -1,4 +1,8 @@
-<%= simple_form_for booking, wrapper: :inline_form, html: { class: "row row-cols-lg-auto g-3" } do |f| %>
-  <%= f.input :status, label: false, collection: Booking::BOOKING_STATUS %>
-  <%= f.button :submit, class: 'status-button' %>
+<%= simple_form_for booking, html: { class: "no-bs-validation row row-cols-auto align-items-center" } do |f| %>
+  <%= f.input :status,
+              label: false,
+              include_blank: false,
+              wrapper_html: { class: "mb-auto" },
+              collection: Booking::BOOKING_STATUS %>
+  <%= f.button :submit, value: "Submit", class: 'btn btn-primary' %>
 <% end %>
