@@ -3,6 +3,14 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @markers = @products.map do |product|
+      {
+        userFirstName: product.user.first_name,
+        userLastName: product.user.last_name,
+        latitude: product.user.latitude,
+        longitude: product.user.longitude
+      }
+    end
   end
 
   def show
