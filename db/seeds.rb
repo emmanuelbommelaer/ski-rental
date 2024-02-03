@@ -55,7 +55,7 @@ product.save!
 product = Product.new()
 product.category = "Ski"
 product.name = "Rossignol"
-product.details = "Performance ski for advanced skiers, enjoy skiing on all slopes, under all conditions. Never used, as I already have a pair of skis"
+product.details = "Performance ski for advanced skiers, enjoy skiing on all slopes, under all conditions. Never used, as I already have a pair of skis, a stylish and high-performance companion designed to elevate your winter adventures. This board seamlessly blends fashion with function, featuring a directional shape for stability and control on various terrains. The Hype's Hybrid Rocker profile ensures a playful yet responsive ride, perfect for riders of all levels. Crafted with a lightweight and durable wood core"
 product.price_per_day = 40
 product.user = manu
 file = URI.open("https://backend.intersport-rent.fr/media/image/54/f9/9e5f8fbae8625d7d28902208a5d2.png")
@@ -75,7 +75,7 @@ product.save!
 product = Product.new()
 product.category = "Snowboard"
 product.name = "Salomon"
-product.details = "Introducing the Salomon Pulse Snowboard, a high-performance companion for riders seeking an exhilarating mountain experience. Crafted with precision and innovation, this board seamlessly blends cutting-edge technology with a versatile design. The Pulse features a directional twin shape, providing stability and control for riders of all levels while excelling in various terrains."
+product.details = "Introducing the Salomon Pulse Snowboard, a high-performance companion for riders seeking an exhilarating mountain experience. Crafted with precision and innovation, this board seamlessly blends cutting-edge technology with a versatile design. The Pulse features a directional twin shape, providing stability and control for riders of all levels while excelling in various terrains, feature a sleek design that effortlessly complements your winter wardrobe, while their women-specific fit ensures optimal comfort and control during every ride. The quick-lacing system allows for easy and precise adjustments, so you can spend less time gearing up and more time carving through the snow"
 product.price_per_day = 25
 product.user = emily
 file = URI.open("https://backend.intersport-rent.fr/media/image/f1/48/c4df024b7876bc7a4f41c69ff6ca.png")
@@ -104,7 +104,7 @@ product.save!
 
 product = Product.new()
 product.category = "Boots"
-product.name = "Black and white perfect for rainy days"
+product.name = "Black boots"
 product.details = "The RainDancer Boots boast a waterproof and breathable membrane, keeping your feet comfortably protected against wet conditions. The quick-lacing system allows for hassle-free adjustments, while the heat-moldable liner ensures a personalized and snug fit. Lightweight yet rugged, these boots provide the perfect balance of agility and durability. Conquer the slopes in style with the RainDancer Snowboard Boots by Hype – where fashion meets resilience for a confident ride in any weather."
 product.price_per_day = 15
 product.user = lila

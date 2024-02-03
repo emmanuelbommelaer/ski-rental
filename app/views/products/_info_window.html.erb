@@ -6,4 +6,5 @@
     <%= product.user.address %>
   </div>
   <%= link_to "See all products", user_products_path(product.user) %>
+  (<%= product.user.products.size %>)
 </div>
