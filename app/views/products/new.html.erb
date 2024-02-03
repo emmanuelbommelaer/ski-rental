@@ -1,11 +1,11 @@
 <div class="container">
-  <h1>Add a new product to rent</h1>
+  <h2 class="mb-4">Add a new product to rent</h2>
   <%= simple_form_for @product do |f| %>
     <%= f.input :category, :collection => Product::PRODUCT_CATEGORIES %>
     <%= f.input :name %>
     <%= f.input :details %>
     <%= f.input :price_per_day %>
     <%= f.input :photo, as: :file %>
-    <%= f.button :submit, class:"btn btn-primary" %>
+    <%= f.button :submit, "Add product", class:"btn btn-primary" %>
   <% end %>
 </div>

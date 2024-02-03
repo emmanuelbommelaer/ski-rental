@@ -45,7 +45,7 @@ lila.save!
 product = Product.new()
 product.category = "Ski"
 product.name = "Mc Kinley"
-product.details = "Blue pack, for beginners, year 2019, in perfect shape"
+product.details = "Blue pack, for beginners, year 2019, in perfect shape, Gear up for an unforgettable skiing escapade with our top-notch ski rental service. Our premium ski packages include high-performance skis, meticulously tuned for various terrains. From smooth groomed trails to challenging powder, our expertly maintained skis ensure an exhilarating and seamless glide down the slopes."
 product.price_per_day = 30
 product.user = admin
 file = URI.open("https://backend.intersport-rent.fr/media/image/db/3d/93712707c8e5f506ec0d940dc92a.png")
@@ -87,7 +87,7 @@ product.category = "Snowboard"
 product.name = "Hype snowboard for women"
 product.details = "the Hype Snowboard for women – a stylish and high-performance companion designed to elevate your winter adventures. This board seamlessly blends fashion with function, featuring a directional shape for stability and control on various terrains. The Hype's Hybrid Rocker profile ensures a playful yet responsive ride, perfect for riders of all levels. Crafted with a lightweight and durable wood core, this board offers a harmonious balance of flexibility and strength."
 product.price_per_day = 23
-product.user = emily
+product.user = admin
 file = URI.open("https://backend.intersport-rent.fr/media/image/08/c2/7448a8537ab130dfaae1a2160890.png")
 product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
 product.save!
@@ -112,6 +112,16 @@ file = URI.open("https://backend.intersport-rent.fr/media/image/1a/6c/c120454d9a
 product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
 product.save!
 
+product = Product.new()
+product.category = "Helmet"
+product.name = "2023 Helmet"
+product.details = "Embark on your alpine adventure fully protected with our premium ski helmet rental service. Crafted for comfort and safety, our helmets are designed to provide optimal head protection while navigating the slopes. Adjustable straps ensure a secure fit, while ventilation systems keep you cool during intense runs. Whether you're a seasoned skier or hitting the slopes for the first time, our high-quality helmets guarantee a worry-free and exhilarating skiing experience."
+product.price_per_day = 8
+product.user = john
+file = URI.open("https://backend.intersport-rent.fr/media/image/b3/72/a63b1cfd153884a11b8b51f2a4f9.png")
+product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
+product.save!
+
 
 booking = Booking.new()
 booking.user = admin
@@ -123,7 +133,7 @@ booking.save!
 
 booking = Booking.new()
 booking.user = admin
-booking.product = Product.find_by_name("Hype snowboard for women")
+booking.product = Product.find_by_name("Black boots")
 booking.status = "Pending"
 booking.start_date = DateTime.current + 33
 booking.end_date = DateTime.current + 40
@@ -131,8 +141,16 @@ booking.save!
 
 
 booking = Booking.new()
-booking.user = admin
-booking.product = Product.find_by_name("Salomon")
+booking.user = emily
+booking.product = Product.find_by_name("Hype snowboard for women")
+booking.status = "Pending"
+booking.start_date = DateTime.current + 32
+booking.end_date = DateTime.current + 38
+booking.save!
+
+booking = Booking.new()
+booking.user = john
+booking.product = Product.find_by_name("Mc Kinley")
 booking.status = "Pending"
 booking.start_date = DateTime.current + 32
 booking.end_date = DateTime.current + 38
