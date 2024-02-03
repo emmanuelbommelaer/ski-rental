@@ -33,6 +33,8 @@ gem "cloudinary"
 # Use Geocoder to add map
 gem "geocoder"
 
+gem "algoliasearch-rails"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

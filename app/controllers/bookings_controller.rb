@@ -27,9 +27,11 @@ class BookingsController < ApplicationController
   end
 
   def change_status
+    @owned_bookings = Booking.joins(:product).where(product: { user: current_user })
     @booking = Booking.find(params[:id])
     @booking.status = params[:booking][:status]
     @booking.update(booking_params)
+    render "bookings/sales_index", status: :accepted
   end
 
   private
