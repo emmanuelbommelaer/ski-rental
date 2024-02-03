@@ -1,0 +1,9 @@
+<div>
+  <div class="fw-bold">
+    <%= product.user.first_name %> <%= product.user.last_name %>
+  </div>
+  <div>
+    <%= product.user.address %>
+  </div>
+  <%= link_to "See all products", user_products_path(product.user) %>
+</div>
