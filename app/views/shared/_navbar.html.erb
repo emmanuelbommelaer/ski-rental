@@ -12,7 +12,7 @@
       <ul class="navbar-nav me-auto align-items-center">
         <% if user_signed_in? %>
           <li class="nav-item active m-1">
-            <%= button_to "List a product", new_product_path, class: "btn btn-secondary", method: :get %>
+            <%= button_to "Add a product", new_product_path, class: "btn btn-secondary", method: :get %>
           </li>
           <li class="nav-item active m-3">
             <%= button_to "My bookings", bookings_path, class: "btn btn-secondary", method: :get %>
