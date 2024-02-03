@@ -21,6 +21,10 @@ class ProductsController < ApplicationController
     @products = Product.where(user: current_user)
   end
 
+  def index_for_user
+    @products = Product.where(user_id: params[:id])
+  end
+
   def new
     @product = Product.new
   end
