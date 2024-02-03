@@ -1,5 +1,5 @@
 <div class="row">
-  
+
   <div class="col-8">
     <div class="container">
       <div class="cards">
@@ -7,7 +7,9 @@
           <%= link_to product_path(product) do %>
             <div class="card" >
                 <h3><%= product.name %></h3>
+                <div class="image">
                 <%= cl_image_tag(product.photo.key)%>
+                </div>
                 <p><%= product.price_per_day %> euros per day</p>
             </div>
           <% end %>

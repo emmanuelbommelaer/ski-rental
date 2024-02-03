@@ -7,8 +7,11 @@
   margin-left:10px;
   margin-right:10px;
   background-color:c#F4F4F4;
-  min-height: 200px;
-  padding: 20px;
+  height: 450px;
+  padding: 40px;
+  text-align: center;
+
+
 }
 
 .card:hover {
@@ -33,4 +36,12 @@
   gap: 1rem;
   margin: 16px;
   flex-grow: 1;
+}
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: a
+}
+.image {
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
