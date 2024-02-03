@@ -7,10 +7,18 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-admin = User.new(email: "admin@ski-rental.com", password: "123456", first_name: "Candide", last_name: "Thovex", address: "120 rue du Mont-Blanc 74028 Chamonix")
+admin = User.new(email: "admin@ski-rental.com",
+                  password: "123456",
+                  first_name: "Candide",
+                  last_name: "Thovex",
+                  address: "16 villa Gaudelet, 75011 Paris")
 admin.save!
 
-renter = User.new(email: "manu@nulenski.com", password: "234567", first_name: "Emmanuel", last_name: "Bommelaer", address: "9 rue des Ecuyers 78100 SGEL")
+renter = User.new(email: "manu@nulenski.com",
+                  password: "234567",
+                  first_name: "Emmanuel",
+                  last_name: "Bommelaer",
+                  address: "123 Rte de la Roumnaz, 74400 Chamonix")
 renter.save!
 
 product = Product.new()
