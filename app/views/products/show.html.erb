@@ -1,29 +1,31 @@
-<div class="container">
-  <h1 class="mb-3"><%= @product.name %></h1>
-  <div class="row gx-5 mb-4">
-    <div class="col-4">
-      <span class="category-tag mb-3"><%= @product.category %></span>
-      <%= cl_image_tag(@product.photo.key,
-                        :background=>"#F4F4F4",
-                        width: 350,
-                        crop: :fill) %>
-    </div>
-    <div class="col-4 product-show-details">
-      <div class="product-show-details-top">
-        <span class="fs-5 fw-bold mb-3">Description</span>
-        <p><%= @product.details %></p>
+<div class="d-flex">
+  <div class="container">
+    <h1 class="mb-3"><%= @product.name %></h1>
+    <div class="row gx-5 mb-4">
+      <div class="col-4">
+        <span class="category-tag mb-3"><%= @product.category %></span>
+        <%= cl_image_tag(@product.photo.key,
+                          :background=>"#F4F4F4",
+                          width: 350,
+                          crop: :fill) %>
       </div>
-      <div class="product-show-details-bottom">
-        <div class="divider"></div>
-        <span class="fs-5 fw-bold mb-3">Address</span>
-        <p><%= @product.user.address %></p>
+      <div class="col-4 product-show-details">
+        <div class="product-show-details-top">
+          <span class="fs-5 fw-bold mb-3">Description</span>
+          <p><%= @product.details %></p>
+        </div>
+        <div class="product-show-details-bottom">
+          <div class="divider"></div>
+          <span class="fs-5 fw-bold mb-3">Address</span>
+          <p><%= @product.user.address %></p>
+        </div>
+      </div>
+      <div class="col-4 booking-card">
+        <h2 class="mb-3">Book this product</h2>
+        <p><strong class="fs-4"><%= @product.price_per_day.round %></strong> € per day</p>
+        <%= render "bookings/form" %>
       </div>
     </div>
-    <div class="col-4 booking-card">
-      <h2 class="mb-3">Book this product</h2>
-      <p><strong class="fs-4"><%= @product.price_per_day.round %></strong> € per day</p>
-      <%= render "bookings/form" %>
-    </div>
+    <%= link_to "Back to products", products_path %>
   </div>
-  <%= link_to "Back to products", products_path %>
 </div>
