@@ -30,3 +30,10 @@ body {
 .card img{
   width:100%;
 }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin: 16px;
+  flex-grow: 1;
+}
