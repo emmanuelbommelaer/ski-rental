@@ -7,7 +7,8 @@
   margin-left:10px;
   margin-right:10px;
   background-color:c#F4F4F4;
-  min-height: 200px
+  min-height: 200px;
+  padding: 20px;
 }
 
 .card:hover {
@@ -25,4 +26,11 @@
 }
 .card img{
   width:100%;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 16px;
+  flex-grow: 1;
 }
