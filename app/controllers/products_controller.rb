@@ -8,7 +8,8 @@ class ProductsController < ApplicationController
         userFirstName: product.user.first_name,
         userLastName: product.user.last_name,
         latitude: product.user.latitude,
-        longitude: product.user.longitude
+        longitude: product.user.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {product: product})
       }
     end
   end
