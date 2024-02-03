@@ -1,0 +1,11 @@
+.product-show-details {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.divider {
+  height: 1px;
+  border: 1px solid $light-gray;
+}

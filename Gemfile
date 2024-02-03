@@ -30,6 +30,9 @@ gem "jbuilder"
 # Use Cloudinary for product photos
 gem "cloudinary"
 
+# Use Geocoder to add map
+gem "geocoder"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
