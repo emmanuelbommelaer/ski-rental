@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   patch "/bookings/:id", to: "bookings#change_status", as: :booking
 
   get "/sales", to:"bookings#sales_index", as: :sales
+
+  get "products/users/:id", to: "products#index_for_user", as: :user_products
 end
