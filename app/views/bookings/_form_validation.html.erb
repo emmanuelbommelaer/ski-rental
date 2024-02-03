@@ -1,0 +1,4 @@
+<%= simple_form_for booking, wrapper: :inline_form, html: { class: "row row-cols-lg-auto g-3" } do |f| %>
+  <%= f.input :status, label: false, collection: Booking::BOOKING_STATUS %>
+  <%= f.button :submit, class: 'status-button' %>
+<% end %>

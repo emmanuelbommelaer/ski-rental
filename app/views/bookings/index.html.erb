@@ -12,20 +12,26 @@
                           height: 60,
                           crop: :fill) %>
       </div>
-      <div class="col-2">
+      <div class="col-1">
         <%= b.product.name %>
       </div>
       <div class="col-1">
         <span class="category-tag"><%= b.product.category %></span>
       </div>
-      <div class="col-3">
-        <%= "Loué du #{b.start_date.strftime("%d/%m/%Y")} au #{b.end_date.strftime("%d/%m/%Y")}" %>
+      <div class="col-2">
+        <%= "From #{b.start_date.strftime("%d/%m/%Y")} to #{b.end_date.strftime("%d/%m/%Y")}" %>
       </div>
       <div class="col-2">
-        Prix total: <%= b.product.price_per_day * ((b.end_date - b.start_date)/86_400).ceil %>€
+        Total cost: <%= b.total_price %>
       </div>
-      <div class="col-3">
-        Loué à <%= b.user.first_name %> <%= b.user.last_name %>, habitant à <%= b.user.address %>
+      <div class="col-2">
+        From: <%= b.user.first_name %> <%= b.user.last_name %>
+      </div>
+      <div class="col-2">
+        Address: <%= b.user.address %>
+      </div>
+      <div class="col-1">
+        <span class="status-tag"><%= b.status %></span>
       </div>
     </div>
     <% end %>
