@@ -123,21 +123,21 @@ product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "i
 product.save!
 
 
-# booking = Booking.new()
-# booking.user = admin
-# booking.product = Product.find_by_name("Aurora boots for women")
-# booking.status = "Pending"
-# booking.start_date = DateTime.current + 31
-# booking.end_date = DateTime.current + 33
-# booking.save!
+booking = Booking.new()
+booking.user = admin
+booking.product = Product.find_by_name("Aurora boots for women")
+booking.status = "Pending"
+booking.start_date = DateTime.current + 31
+booking.end_date = DateTime.current + 33
+booking.save!
 
-# booking = Booking.new()
-# booking.user = admin
-# booking.product = Product.find_by_name("Black boots")
-# booking.status = "Pending"
-# booking.start_date = DateTime.current + 33
-# booking.end_date = DateTime.current + 40
-# booking.save!
+booking = Booking.new()
+booking.user = admin
+booking.product = Product.find_by_name("Black boots")
+booking.status = "Pending"
+booking.start_date = DateTime.current + 33
+booking.end_date = DateTime.current + 40
+booking.save!
 
 
 booking = Booking.new()

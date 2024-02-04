@@ -1,17 +1,17 @@
 <div class="container">
-<div class="d-flex justify-content-between">
-  <h2 class="mb-4">All my bookings</h2>
-  <%= link_to "Back to products", products_path %>
-</div>
-  <% @bookings.each do |b| %>
-    <div class="booking-line row">
-      <div class="col-1">
-        <%= cl_image_tag(b.product.photo.key,
-                          :background=>"#F4F4F4",
-                          width: 60,
-                          height: 60,
-                          crop: :fill) %>
-      </div>
+  <div class="d-flex justify-content-between">
+    <h2 class="mb-4">All my bookings</h2>
+    <%= link_to "Back to products", products_path %>
+  </div>
+    <% @bookings.each do |b| %>
+      <div class="booking-line row">
+        <div class="col-1">
+          <%= cl_image_tag(b.product.photo.key,
+                            :background=>"#F4F4F4",
+                            width: 60,
+                            height: 60,
+                            crop: :fill) %>
+        </div>
       <div class="col-1">
         <%= b.product.name %>
       </div>
@@ -25,13 +25,13 @@
         Total cost: <%= b.total_price %>
       </div>
       <div class="col-2">
-        From: <%= b.user.first_name %> <%= b.user.last_name %>
+        Owner: <%= b.product.user.first_name %> <%= b.product.user.last_name %>
       </div>
       <div class="col-2">
         Address: <%= b.user.address %>
       </div>
       <div class="col-1" data-controller="validate">
-        <span data-validate-target="validateElement" data-action="load@window->validate#colorize" class="status-tag"><%= b.status %></span>
+        <span data-validate-target="validateElement" data-action="load@window->validate#colorizeBookingTag" class="status-tag"><%= b.status %></span>
       </div>
     </div>
     <% end %>
