@@ -31,7 +31,7 @@
         Address: <%= b.user.address %>
       </div>
       <div class="col-1" data-controller="validate">
-        <span data-validate-target="validateElement" data-action="load@window->validate#colorizeBookingTag" class="status-tag"><%= b.status %></span>
+        <span data-validate-target="tag" class="status-tag d-none"><%= b.status %></span>
       </div>
     </div>
     <% end %>

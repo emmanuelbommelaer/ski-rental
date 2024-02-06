@@ -5,7 +5,7 @@
   </div>
   <div data-controller="validate">
     <% @owned_bookings.each do |b| %>
-      <div class="booking-line row" data-action="load@window->validate#colorizeBookingTag">
+      <div class="booking-line row">
         <div class="col-1">
           <%= cl_image_tag(b.product.photo.key,
                             :background=>"#F4F4F4",
@@ -30,10 +30,10 @@
         </div>
         <div class="col-2 d-flex">
           <div>
-            <p data-validate-target="tag" class="status-tag mb-0"><%= b.status %></p>
+            <p data-validate-target="tag" class="status-tag d-none mb-0"><%= b.status %></p>
           </div>
           <% if b.status == "Pending" %>
-            <div data-validate-target="controls" class="d-flex align-items-center">
+            <div class="d-flex align-items-center">
               <%= button_to booking_path(b),
                                       method: :patch,
                                       class: "border-0 bg-white text-success",
