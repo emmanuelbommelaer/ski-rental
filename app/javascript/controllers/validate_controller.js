@@ -6,12 +6,12 @@ export default class extends Controller {
 
   connect() {
     this.tagTargets.forEach((tag) => {
-      console.log(tag)
       if (tag.textContent === "Accepted") {
         tag.classList.add("accepted");
       } else if (tag.textContent === "Declined") {
         tag.classList.add("declined");
       }
+      tag.classList.remove("d-none")
     })
   }
 
