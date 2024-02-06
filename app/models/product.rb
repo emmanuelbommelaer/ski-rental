@@ -4,12 +4,14 @@ class Product < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 
-  # include AlgoliaSearch
+  include AlgoliaSearch
 
-  # algoliasearch do
-  #   attributes :name, :category, :details
-  #   tags 'category'
-  # end
+  algoliasearch index_name: "20240206_ski_products_test" do
+    # attributes :name, :category, :details
+    tags 'category'
+    attributesForFaceting ['searchable(category)']
+    numericAttributesForFiltering ['price_per_day']
+  end
 
   validates :name, presence: true
   validates :category, presence: true, inclusion: { in: PRODUCT_CATEGORIES }
