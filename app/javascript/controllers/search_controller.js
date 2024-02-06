@@ -20,7 +20,8 @@ export default class extends Controller {
           item: (hit, { html, components }) => html`
             <a href="/products/${hit.id}">
               <div class="card">
-                <h1>${components.Highlight({ hit, attribute: 'name' })}</h1>
+                <h3>${components.Highlight({ hit, attribute: 'name' })}</h1>
+                <img height="200" src=${hit.image_url}>
                 <p>${components.Highlight({ hit, attribute: 'details' })}</p>
               </div>
             </a>
