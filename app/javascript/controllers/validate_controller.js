@@ -2,28 +2,24 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="validate"
 export default class extends Controller {
-  static targets = [ "validateElement", "acceptBookingElement", "declineBookingElement" ]
+  static targets = [ "tag" ]
 
   connect() {
-  }
-
-  colorizeBookingTag() {
-    this.validateElementTargets.forEach((target) => {
-      if (target.textContent == "Accepted") {
-        target.classList.add("accepted", "validated-disabled")
-      } else if (target.textContent == "Declined") {
-        target.classList.add("declined", "validated-disabled")
+    this.tagTargets.forEach((tag) => {
+      console.log(tag)
+      if (tag.textContent === "Accepted") {
+        tag.classList.add("accepted");
+      } else if (tag.textContent === "Declined") {
+        tag.classList.add("declined");
       }
     })
   }
 
   acceptBooking () {
-    this.acceptBookingElementTarget.textContent = "Accepted"
-    this.declineBookingElementTarget.classList.add("d-none")
+    this.tagTarget.classList.add("accepted")
   }
 
   declineBooking () {
-    this.declineBookingElementTarget.textContent = "Declined"
-    this.acceptBookingElementTarget.classList.add("d-none")
+    this.tagTarget.classList.add("declined")
   }
 }
