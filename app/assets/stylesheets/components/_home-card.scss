@@ -8,6 +8,7 @@
   margin-right:10px;
   background-color:c#F4F4F4;
   height: 350px;
+  width: 350px;
   padding: 20px;
   text-align: center;
 }
@@ -18,6 +19,11 @@
 .card > .card-inner {
   padding:10px;
 }
+
+.card h1, p {
+  text-decoration: none;
+}
+
 .card .header h2, h3 {
   margin-bottom: 0px;
   margin-top:0px;
@@ -39,7 +45,18 @@ a:-webkit-any-link {
   text-decoration: none;
   cursor: a
 }
+
 .image {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+#hits .ais-Hits-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+#hits.list .ais-Hits-list {
+grid-template-columns: 2fr;
 }
