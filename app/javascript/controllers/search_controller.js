@@ -17,15 +17,18 @@ export default class extends Controller {
       instantsearch.widgets.hits({
         container: '#hits',
         templates: {
+          empty(results, { html }) {
+            return html`No results for <q>${results.query}</q>`;
+          },
           item: (hit, { html, components }) => html`
-            <a href="/products/${hit.id}">
-              <div class="card">
-                <h3>${components.Highlight({ hit, attribute: 'name' })}</h1>
+            <a href='/products/${hit.id}'>
+              <h3>${components.Highlight({ hit, attribute: 'name' })}</h1>
+              <div class="image">
                 <img height="200" src=${hit.image_url}>
-                <p>${components.Highlight({ hit, attribute: 'details' })}</p>
               </div>
-            </a>
-          `,
+              <p>€${hit.price_per_day}/day</p>
+              <p>${components.Highlight({ hit, attribute: 'details' })}</p>
+            </a>`,
         },
 
       })
