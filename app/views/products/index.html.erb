@@ -1,6 +1,9 @@
 <div class="row">
-
   <div class="col-8">
+    <div class="container" data-controller="search">
+      <div id="searchbox"></div>
+      <div id="hits"></div>
+    </div>
     <div class="container">
       <div class="cards">
         <% @products.each do |product| %>
