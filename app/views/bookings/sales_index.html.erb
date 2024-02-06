@@ -1,38 +1,59 @@
 <div class="container">
-<div class="d-flex justify-content-between">
-  <h2 class="mb-4">My sales portfolio</h2>
-  <%= link_to "Back to products", products_path %>
-</div>
-  <% @owned_bookings.each do |b| %>
-    <div class="booking-line row">
-      <div class="col-1">
-        <%= cl_image_tag(b.product.photo.key,
-                          :background=>"#F4F4F4",
-                          width: 60,
-                          height: 60,
-                          crop: :fill) %>
-      </div>
-      <div class="col-1">
-        <%= b.product.name %>
-      </div>
-      <div class="col-1">
-        <span class="category-tag"><%= b.product.category %></span>
-      </div>
-      <div class="col-2">
-        <%= "From #{b.start_date.strftime("%d/%m/%Y")} to #{b.end_date.strftime("%d/%m/%Y")}" %>
-      </div>
-      <div class="col-2">
-        Total cost: <%= b.total_price %>
-      </div>
-      <div class="col-2">
-        To: <%= b.user.first_name %> <%= b.user.last_name %>
-      </div>
-      <% if b.status == "Pending" %>
-        <div class="col-3">
-          <%= render "form_validation", booking: b %>
+  <div class="d-flex justify-content-between">
+    <h2 class="mb-4">My sales portfolio</h2>
+    <%= link_to "Back to products", products_path %>
+  </div>
+  <div data-controller="validate">
+    <% @owned_bookings.each do |b| %>
+      <div class="booking-line row" data-action="load@window->validate#colorizeBookingTag">
+        <div class="col-1">
+          <%= cl_image_tag(b.product.photo.key,
+                            :background=>"#F4F4F4",
+                            width: 60,
+                            height: 60,
+                            crop: :fill) %>
         </div>
-      <% end %>
-    </div>
+        <div class="col-1">
+          <%= b.product.name %>
+        </div>
+        <div class="col-1">
+          <span class="category-tag"><%= b.product.category %></span>
+        </div>
+        <div class="col-3">
+          <%= "From #{b.start_date.strftime("%d/%m/%Y")} to #{b.end_date.strftime("%d/%m/%Y")}" %>
+        </div>
+        <div class="col-2">
+          Total cost: <%= b.total_price %>
+        </div>
+        <div class="col-2">
+          To: <%= b.user.first_name %> <%= b.user.last_name %>
+        </div>
+        <div class="col-2">
+          <% if b.status == "Pending" %>
+            <div class='d-flex' data-validate-target="validateBooking">
+              <%= button_to "Accept", booking_path(b),
+                                      method: :patch,
+                                      class: "btn status-tag accepted",
+                                      params: { booking: { status: "Accepted" } },
+                                      data: {
+                                        action: "click->validate#acceptBooking",
+                                        validate_target: "acceptBookingElement" } %>
+              <%= button_to "Decline", booking_path(b),
+                                      method: :patch,
+                                      class: "btn status-tag declined",
+                                      params: { booking: { status: "Declined" } },
+                                      data: {
+                                        action: "click->validate#declineBooking",
+                                        validate_target: "declineBookingElement" } %>
+            </div>
+          <% else %>
+            <div>
+              <p data-validate-target="validateElement" class="status-tag mb-0"><%= b.status %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
     <% end %>
+    </div>
   </div>
 </div>

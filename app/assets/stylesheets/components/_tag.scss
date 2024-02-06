@@ -13,13 +13,14 @@
 .status-tag {
   border-radius: 20px;
   background-color: $orange;
-  font-size: 12px;
+  font-size: 16px;
   padding: 4px 12px;
   color: white;
   font-weight: bold;
   min-width: 60px;
   display: inline-block;
   text-align: center;
+  margin-right: 12px;
 }
 
 .accepted {
@@ -28,4 +29,9 @@
 
 .declined {
   background-color: $red;
+}
+
+.validated-disabled {
+  pointer-events: none;
+  filter: brightness(90%);
 }
