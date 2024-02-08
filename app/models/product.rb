@@ -1,15 +1,15 @@
 class Product < ApplicationRecord
-  PRODUCT_CATEGORIES = %w(Ski Snowboard Boots Helmet)
-  belongs_to :user
-  has_many :bookings
-  has_one_attached :photo
-
   # include AlgoliaSearch
 
   # algoliasearch do
   #   attributes :name, :category, :details
   #   tags 'category'
   # end
+
+  PRODUCT_CATEGORIES = %w(Ski Snowboard Boots Helmet)
+  belongs_to :user
+  has_many :bookings
+  has_one_attached :photo
 
   validates :name, presence: true
   validates :category, presence: true, inclusion: { in: PRODUCT_CATEGORIES }

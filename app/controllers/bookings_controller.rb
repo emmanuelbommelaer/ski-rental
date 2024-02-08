@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :comment
   def new
     @booking = Booking.new
   end
