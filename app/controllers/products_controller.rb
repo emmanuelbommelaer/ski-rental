@@ -37,12 +37,21 @@ class ProductsController < ApplicationController
       redirect_to product_path(@product)
     else
       render :new, status: :unprocessable_entity
+  end
+
+  def rate
+      raise
+      @product = Product.find(params[:id])
+      rating = params[:rating].to_i
+      @product.update(rating: rating)
+      puts "you gave a: #{rating} ok we got it"
+      redirect_to @product
     end
   end
 
   private
   def product_params
-    params.require(:product).permit(:name, :category, :photo, :details, :price_per_day)
+    params.require(:product).permit(:name, :category, :photo, :details, :price_per_day, :rating)
   end
 
   def set_product

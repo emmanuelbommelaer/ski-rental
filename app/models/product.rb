@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_one_attached :photo
+  has_many :ratings
 
   validates :name, presence: true
   validates :category, presence: true, inclusion: { in: PRODUCT_CATEGORIES }
@@ -10,14 +11,7 @@ class Product < ApplicationRecord
   validates :price_per_day, presence: true, comparison: { greater_than: 0 }
   validates :details, presence: true
   validates :photo, presence: true
-
-  def blob_url(blob)
-    Rails.application.routes.url_helpers.rails_blob_url(blob, only_path: true)
-  end
-
-  def get_image_url
-    return blob_url(photo) if photo.attached?
-  end
+  validates :rating, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }, allow_nil: true
 
   include AlgoliaSearch
 
@@ -25,9 +19,8 @@ class Product < ApplicationRecord
     add_attribute :image_url do
       photo.url
     end
-    # tags ['category']
     attributesForFaceting ['searchable(category)']
     numericAttributesForFiltering ['price_per_day']
   end
-
+  
 end

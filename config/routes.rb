@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :bookings, only: [:new, :create]
+    resources :ratings, only: [:new, :create]
   end
+
+
+
 
   get "/owned-products", to: "products#index_owned", as: :owned_products
 
@@ -14,4 +18,6 @@ Rails.application.routes.draw do
   get "/sales", to:"bookings#sales_index", as: :sales
 
   get "products/users/:id", to: "products#index_for_user", as: :user_products
+
+
 end
