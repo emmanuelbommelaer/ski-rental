@@ -122,6 +122,8 @@ file = URI.open("https://backend.intersport-rent.fr/media/image/b3/72/a63b1cfd15
 product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
 product.save!
 
+Product.clear_index!
+Product.reindex!
 
 booking = Booking.new()
 booking.user = admin
