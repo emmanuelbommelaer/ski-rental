@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { algolia_index } from './search_index'
 
 // Connects to data-controller="search"
 export default class extends Controller {
@@ -6,7 +7,7 @@ export default class extends Controller {
     const searchClient = algoliasearch('JD2V2YE8DN', 'cce8dc90dda32cc8c4e45fa319caa120');
 
     const search = instantsearch({
-      indexName: '20240206_ski_products_test',
+      indexName: algolia_index,
       searchClient,
     });
     search.addWidgets([
