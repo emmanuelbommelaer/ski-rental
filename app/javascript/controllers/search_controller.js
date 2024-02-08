@@ -12,6 +12,7 @@ export default class extends Controller {
     search.addWidgets([
       instantsearch.widgets.searchBox({
         container: '#searchbox',
+        placeholder: "Find ski equipment to rent!"
       }),
 
       instantsearch.widgets.hits({
@@ -21,14 +22,14 @@ export default class extends Controller {
             return html`No results for <q>${results.query}</q>`;
           },
           item: (hit, { html, components }) => html`
-            <a href="/products/${hit.id}">
+            <a class="hit-link" href="/products/${hit.id}">
               <div class="hit-image">
                 <img height="200" src=${hit.image_url}/>
               </div>
-              <div class="hit-text" style="text-decoration:none">
-                <h3 class="hit-name">${components.Highlight({ hit, attribute: 'name' })}</h1>
-                <p class="category-tag">€${hit.price_per_day}/day</p>
-                <p class="hit-desc">${components.Highlight({ hit, attribute: 'details' })}</p>
+              <h3 class="hit-name">${components.Highlight({ hit, attribute: 'name' })}</h3>
+              <div class="hit-data">
+                <p class="category-tag">${hit.category}</p>
+                <p class="price-tag">€${hit.price_per_day}/day</p>
               </div>
             </a>`
         },
