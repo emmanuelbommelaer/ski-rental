@@ -21,7 +21,7 @@ class Product < ApplicationRecord
 
   include AlgoliaSearch
 
-  algoliasearch index_name: "20240206_ski_products_test" do
+  algoliasearch index_name ENV["ALGOLIA_INDEX"] do
     add_attribute :image_url do
       photo.url
     end
