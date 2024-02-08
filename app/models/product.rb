@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
   PRODUCT_CATEGORIES = %w(Ski Snowboard Boots Helmet)
+  INDEX = ENV["ALGOLIA_INDEX"]
   belongs_to :user
   has_many :bookings
   has_one_attached :photo
@@ -15,12 +16,12 @@ class Product < ApplicationRecord
 
   include AlgoliaSearch
 
-  algoliasearch index_name ENV["ALGOLIA_INDEX"] do
+  algoliasearch index_name: INDEX  do
     add_attribute :image_url do
       photo.url
     end
     attributesForFaceting ['searchable(category)']
     numericAttributesForFiltering ['price_per_day']
   end
-  
+
 end
