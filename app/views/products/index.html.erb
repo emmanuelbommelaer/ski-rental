@@ -1,26 +1,12 @@
 <div class="row">
-
-  <div class="col-8">
-    <div class="container">
-      <div class="cards">
-        <% @products.each do |product| %>
-          <%= link_to product_path(product) do %>
-            <div class="card" >
-                <h3><%= product.name %></h3>
-                <div class="image">
-                  <%= cl_image_tag(product.photo.key,
-                        height: 200,
-                        crop: :fill) %>
-                </div>
-                <p><%= product.price_per_day %> euros per day</p>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
+  <div class="col-7">
+    <div class="container" data-controller="search">
+      <div id="searchbox"></div>
+      <div id="hits"></div>
     </div>
   </div>
 
-  <div class="col-4">
+  <div class="col-5">
     <div id="map"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
