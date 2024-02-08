@@ -84,7 +84,7 @@ product.save!
 
 product = Product.new()
 product.category = "Snowboard"
-product.name = "Hype snowboard for women"
+product.name = "Hype snowboard"
 product.details = "the Hype Snowboard for women – a stylish and high-performance companion designed to elevate your winter adventures. This board seamlessly blends fashion with function, featuring a directional shape for stability and control on various terrains. The Hype's Hybrid Rocker profile ensures a playful yet responsive ride, perfect for riders of all levels. Crafted with a lightweight and durable wood core, this board offers a harmonious balance of flexibility and strength."
 product.price_per_day = 23
 product.user = admin
@@ -94,7 +94,7 @@ product.save!
 
 product = Product.new()
 product.category = "Boots"
-product.name = "Aurora boots for women"
+product.name = "Aurora boots"
 product.details = "This Aurora Boots are a perfect fusion of style and performance tailored specifically for women who crave adventure on the slopes. The Aurora Boots feature a sleek design that effortlessly complements your winter wardrobe, while their women-specific fit ensures optimal comfort and control during every ride. The quick-lacing system allows for easy and precise adjustments, so you can spend less time gearing up and more time carving through the snow."
 product.price_per_day = 15
 product.user = lila
@@ -125,7 +125,7 @@ product.save!
 
 booking = Booking.new()
 booking.user = admin
-booking.product = Product.find_by_name("Aurora boots for women")
+booking.product = Product.find_by_name("Aurora boots")
 booking.status = "Pending"
 booking.start_date = DateTime.current + 31
 booking.end_date = DateTime.current + 33
@@ -142,7 +142,7 @@ booking.save!
 
 booking = Booking.new()
 booking.user = emily
-booking.product = Product.find_by_name("Hype snowboard for women")
+booking.product = Product.find_by_name("Hype snowboard")
 booking.status = "Pending"
 booking.start_date = DateTime.current + 32
 booking.end_date = DateTime.current + 38

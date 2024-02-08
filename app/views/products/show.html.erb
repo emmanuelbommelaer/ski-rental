@@ -24,7 +24,7 @@
     </div>
     <div class="col-4 booking-card">
       <h2 class="mb-3">Book this product</h2>
-      <p><strong class="fs-4"><%= @product.price_per_day.round %></strong> € per day</p>
+      <p><strong class="fs-4">€<%= @product.price_per_day.round %></strong>/day</p>
       <%= render "bookings/form" %>
     </div>
   </div>
