@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 
+  validates :sku, presence: true
   validates :name, presence: true
   validates :category, presence: true, inclusion: { in: PRODUCT_CATEGORIES }
   validates :details, presence: true
@@ -21,13 +22,16 @@ class Product < ApplicationRecord
 
   include AlgoliaSearch
 
-  algoliasearch index_name: "20240206_ski_products_test" do
+  algoliasearch index_name ENV["ALGOLIA_INDEX"] do
     add_attribute :image_url do
       photo.url
     end
     # tags ['category']
     attributesForFaceting ['searchable(category)']
     numericAttributesForFiltering ['price_per_day']
+  end
+
+  algoliasearch id: :sku do
   end
 
 end
