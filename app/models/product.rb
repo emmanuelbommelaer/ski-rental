@@ -4,7 +4,6 @@ class Product < ApplicationRecord
   has_many :bookings
   has_one_attached :photo
 
-  validates :sku, presence: true
   validates :name, presence: true
   validates :category, presence: true, inclusion: { in: PRODUCT_CATEGORIES }
   validates :details, presence: true
