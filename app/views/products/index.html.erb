@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-7">
-    <div class="container" data-controller="search">
+    <div class="container" data-controller="search" data-search-index-value="<%= ENV['ALGOLIA_INDEX'] %>">
       <div id="searchbox"></div>
       <div id="hits"></div>
     </div>
