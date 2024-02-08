@@ -31,7 +31,4 @@ class Product < ApplicationRecord
     numericAttributesForFiltering ['price_per_day']
   end
 
-  algoliasearch id: :sku do
-  end
-
 end
