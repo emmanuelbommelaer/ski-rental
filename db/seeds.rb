@@ -42,6 +42,8 @@ lila = User.new(email: "lila@nulenski.com",
                   address: "4 Rue Paul Claudel, 38100 Grenoble")
 lila.save!
 
+puts 'Users created'
+
 product = Product.new()
 product.category = "Ski"
 product.name = "Mc Kinley"
@@ -121,6 +123,8 @@ product.user = john
 file = URI.open("https://backend.intersport-rent.fr/media/image/b3/72/a63b1cfd153884a11b8b51f2a4f9.png")
 product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
 product.save!
+
+puts 'Products created, updating index'
 
 Product.clear_index!
 Product.reindex!
