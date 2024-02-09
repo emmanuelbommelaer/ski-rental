@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   PRODUCT_CATEGORIES = %w(Ski Snowboard Boots Helmet)
   INDEX = ENV["ALGOLIA_INDEX"]
+
   belongs_to :user
   has_many :bookings
   has_one_attached :photo
@@ -20,8 +21,17 @@ class Product < ApplicationRecord
     add_attribute :image_url do
       photo.url
     end
-    attributesForFaceting ['searchable(category)']
-    numericAttributesForFiltering ['price_per_day']
+
+    add_attribute :address do
+      self.user.address.split.last
+    end
+
+    searchableAttributes ['name', 'category', 'details', 'address']
+
+    attributesForFaceting ['category', 'address']
+    numericAttributesForFiltering ['price_per_day', 'rating']
+
+    customRanking ['desc(rating)']
   end
 
 end
