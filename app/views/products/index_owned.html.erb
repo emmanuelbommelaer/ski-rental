@@ -3,13 +3,25 @@
     <h2>All my products</h2>
     <%= button_to "List a product", new_product_path, class: "btn btn-primary", method: :get %>
   </div>
-  <div class="cards">
-    <% @products.each do |product| %>
-      <div class="card" style="max-width:300px;">
-        <h3><%= product.name %></h3>
-        <%= cl_image_tag(product.photo.key) %>
-        <%= link_to "See details", product_path(product) %>
+    <div id="hits">
+      <div class="ais-Hits">
+        <ol class="ais-Hits-list">
+          <% @products.each do |product| %>
+            <li class="ais-Hits-item">
+              <a class="hit-link" href="/products/<%= product.id %>">
+                <div class="hit-image">
+                  <img height="200" src="<%= product.photo.url %>" alt=""/>
+                </div>
+                <h3 class="hit-name"><%= product.name %></h3>
+                <div class="hit-data">
+                  <p class="category-tag"><%= product.category %></p>
+                  <p class="price-tag">€<%= product.price_per_day.to_i %>/day</p>
+                </div>
+              </a>
+            </li>
+          <% end %>
+        </ol>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
