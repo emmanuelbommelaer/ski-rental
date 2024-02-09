@@ -39,6 +39,7 @@ export default class extends Controller {
               <h3 class="hit-name">${components.Highlight({ hit, attribute: 'name' })}</h3>
               <div class="hit-data">
                 <p class="category-tag">${hit.category}</p>
+                <p class="address-tag">${hit.address}</p>
                 <p class="price-tag">€${hit.price_per_day}/day</p>
               </div>
             </a>`

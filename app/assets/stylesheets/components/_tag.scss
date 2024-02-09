@@ -35,6 +35,18 @@
   text-align: center;
 }
 
+.address-tag {
+  border-radius: 20px;
+  background-color: $green;
+  font-size: 12px;
+  padding: 4px 12px;
+  color: white;
+  font-weight: bold;
+  min-width: 60px;
+  display: inline-block;
+  text-align: center;
+}
+
 .accepted {
   background-color: $green;
 }
