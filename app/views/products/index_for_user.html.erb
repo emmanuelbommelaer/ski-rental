@@ -6,19 +6,24 @@
     </div>
     <%= button_to "Back to all products", products_path, class: "btn btn-primary", method: :get %>
   </div>
-      <div class="cards">
+  <div id="hits">
+    <div class="ais-Hits">
+      <ol class="ais-Hits-list">
         <% @products.each do |product| %>
-          <%= link_to product_path(product) do %>
-            <div class="card" >
-                <h3><%= product.name %></h3>
-                <div class="image">
-                  <%= cl_image_tag(product.photo.key,
-                        height: 200,
-                        crop: :fill) %>
-                </div>
-                <p><%= product.price_per_day %> euros per day</p>
-            </div>
-          <% end %>
+          <li class="ais-Hits-item">
+            <a class="hit-link" href="/products/<%= product.id %>">
+              <div class="hit-image">
+                <img height="200" src="<%= product.photo.url %>" alt=""/>
+              </div>
+              <h3 class="hit-name"><%= product.name %></h3>
+              <div class="hit-data">
+                <p class="category-tag"><%= product.category %></p>
+                <p class="price-tag">€<%= product.price_per_day.to_i %>/day</p>
+              </div>
+            </a>
+          </li>
         <% end %>
-      </div>
+      </ol>
+    </div>
+  </div>
 </div>
