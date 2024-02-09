@@ -18,6 +18,10 @@
   height: 150px;
 }
 
+.hit-name {
+  color: $dark-blue;
+}
+
 #hits .ais-Hits-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 300px));

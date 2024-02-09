@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
-  def sales_index
+  def rentals_index
     @owned_bookings = Booking.joins(:product).where(product: { user: current_user })
   end
 
@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = params[:status]
     @booking.update(booking_params)
-    render "/bookings/sales_index", status: :see_other
+    render "/bookings/rentals", status: :see_other
   end
 
   private
