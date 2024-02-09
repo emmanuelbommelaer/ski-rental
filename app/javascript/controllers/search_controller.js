@@ -13,10 +13,16 @@ export default class extends Controller {
       indexName: this.indexValue,
       searchClient,
     });
+
     search.addWidgets([
       instantsearch.widgets.searchBox({
         container: '#searchbox',
         placeholder: "Find ski equipment to rent!"
+      }),
+
+      instantsearch.widgets.refinementList({
+        container: '#filter-list',
+        attribute: 'category',
       }),
 
       instantsearch.widgets.hits({
