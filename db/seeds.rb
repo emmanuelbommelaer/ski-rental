@@ -79,17 +79,17 @@ product.save!
 product = Product.new()
 product.category = "Ski"
 product.name = "KORE X80"
-product.details = "https://media.intersport.fr/is/image/intersportfr/315162_558_FA?$produit_m$"
+product.details = "The KORE 80 X features the tried-and-tested design of the KORE range, with a skate that favors on-piste skiing."
 product.price_per_day = 22
 product.user = john
-file = URI.open("https://backend.intersport-rent.fr/media/image/9e/97/4bb122a7372b57163d09110febd4.png")
+file = URI.open("https://media.intersport.fr/is/image/intersportfr/315162_558_FA?$produit_m$")
 product.photo.attach(io: file, filename: "#{product.name}.png", content_type: "image/png")
 product.save!
 
 product = Product.new()
 product.category = "Ski"
 product.name = "Salomon MAX"
-product.details = "https://media.intersport.fr/is/image/intersportfr/315162_558_FA?$produit_m$"
+product.details = "A set designed for skiers who want to perfect their carving technique."
 product.price_per_day = 21
 product.user = john
 file = URI.open("https://media.intersport.fr/is/image/intersportfr/L47104707Z_FA?$produit_m$")
@@ -111,7 +111,7 @@ product.save!
 product = Product.new()
 product.category = "Snowboard"
 product.name = "Salomon HYPE"
-product.details = "the Hype Snowboard for women – a stylish and high-performance companion designed to elevate your winter adventures. This board seamlessly blends fashion with function, featuring a directional shape for stability and control on various terrains. The Hype's Hybrid Rocker profile ensures a playful yet responsive ride, perfect for riders of all levels. Crafted with a lightweight and durable wood core, this board offers a harmonious balance of flexibility and strength."
+product.details = "the Hype Snowboard for women - a stylish and high-performance companion designed to elevate your winter adventures. This board seamlessly blends fashion with function, featuring a directional shape for stability and control on various terrains. The Hype's Hybrid Rocker profile ensures a playful yet responsive ride, perfect for riders of all levels. Crafted with a lightweight and durable wood core, this board offers a harmonious balance of flexibility and strength."
 product.price_per_day = 23
 product.user = admin
 file = URI.open("https://backend.intersport-rent.fr/media/image/08/c2/7448a8537ab130dfaae1a2160890.png")
@@ -194,8 +194,8 @@ puts 'creating sample helmets'
 
 product = Product.new()
 product.category = "Helmet"
-product.name = "2023 Helmet"
-product.details = "Embark on your alpine adventure fully protected with our premium ski helmet rental service. Crafted for comfort and safety, our helmets are designed to provide optimal head protection while navigating the slopes. Adjustable straps ensure a secure fit, while ventilation systems keep you cool during intense runs. Whether you're a seasoned skier or hitting the slopes for the first time, our high-quality helmets guarantee a worry-free and exhilarating skiing experience."
+product.name = "Cairn Android"
+product.details = "Because protecting the youngest riders is our priority, Cairn has developed the ANDROID J, a reliable and comfortable helmet at a very affordable price. For beginners or the seeds of champions, this helmet offers unrivalled resistance without compromising comfort, at the best price."
 product.price_per_day = 8
 product.user = john
 file = URI.open("https://backend.intersport-rent.fr/media/image/b3/72/a63b1cfd153884a11b8b51f2a4f9.png")
@@ -205,7 +205,7 @@ product.save!
 product = Product.new()
 product.category = "Helmet"
 product.name = "McKinley Pulse"
-product.details = "Embark on your alpine adventure fully protected with our premium ski helmet rental service. Crafted for comfort and safety, our helmets are designed to provide optimal head protection while navigating the slopes. Adjustable straps ensure a secure fit, while ventilation systems keep you cool during intense runs. Whether you're a seasoned skier or hitting the slopes for the first time, our high-quality helmets guarantee a worry-free and exhilarating skiing experience."
+product.details = "A superior solution for skiers, this McKINLEY visor helmet is a reliable combination of eye and head protection in all weather conditions."
 product.price_per_day = 12
 product.user = manu
 file = URI.open("https://media.intersport.fr/is/image/intersportfr/409326_HTG_PR?$produit_m$")
@@ -215,7 +215,7 @@ product.save!
 product = Product.new()
 product.category = "Helmet"
 product.name = "Salomon Pioneer"
-product.details = "Embark on your alpine adventure fully protected with our premium ski helmet rental service. Crafted for comfort and safety, our helmets are designed to provide optimal head protection while navigating the slopes. Adjustable straps ensure a secure fit, while ventilation systems keep you cool during intense runs. Whether you're a seasoned skier or hitting the slopes for the first time, our high-quality helmets guarantee a worry-free and exhilarating skiing experience."
+product.details = "Elegant, sporty visor helmet designed for a perfect fit."
 product.price_per_day = 23
 product.user = manu
 file = URI.open("https://media.intersport.fr/is/image/intersportfr/L412614ENP_FA?$produit_m$")

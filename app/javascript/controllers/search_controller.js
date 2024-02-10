@@ -39,7 +39,7 @@ export default class extends Controller {
         container: '#hits',
         templates: {
           empty(results, { html }) {
-            return html`No results for <q>${results.query}</q>`;
+            return html`No results for <q>${results.query}</q>. Try another search.`;
           },
           item: (hit, { html, components }) => html`
             <a class="hit-link" href="/products/${hit.id}">
