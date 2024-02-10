@@ -39,17 +39,24 @@
                                       class: "border-0 bg-white text-success",
                                       params: { booking: { status: "Accepted" } },
                                       data: { action: "click->validate#acceptBooking"} do %>
-                                        <i class="fa-regular fa-circle-check fs-5"></i>
+                                        <i class="fa-regular fa-circle-check fs-4"></i>
               <% end %>
               <%= button_to booking_path(b),
                                       method: :patch,
                                       class: "border-0 bg-white text-danger",
                                       params: { booking: { status: "Declined" } },
                                       data: {action: "click->validate#declineBooking"} do %>
-                                        <i class="fa-solid fa-trash fs-5" data-action="click->validate#declineBooking"></i>
+                                        <i class="fa-solid fa-trash fs-4" data-action="click->validate#declineBooking"></i>
               <% end %>
             </div>
           <% end %>
+        </div>
+        <div class="mt-4">
+          <span class="mb-0">
+            <i class="fa-solid fa-envelope me-2"></i>
+            Message from <%= b.user.first_name%> <%= b.user.last_name %>:
+          </span>
+          <%= b.message %>
         </div>
       </div>
     <% end %>
