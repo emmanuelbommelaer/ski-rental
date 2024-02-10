@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :bookings, only: [:new, :create]
+    resources :product_ratings, only: [:new, :create]
   end
 
   get "/owned-products", to: "products#index_owned", as: :owned_products

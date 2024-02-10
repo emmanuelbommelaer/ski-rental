@@ -36,19 +36,21 @@
     </div>
     <% end %>
   </div>
-<% end %>
 </div>
+
 <h2>Comments and Ratings</h2>
-<% @booking.booking_ratings.each do |booking_rating| %>
-  <p><strong>Rating:</strong> <%= booking_rating.value %> | <strong>Comment:</strong> <%= booking_rating.content %></p>
-<% end %>
+ <%= form_with(model: [@booking, @product_rating], url: product_product_ratings_path(product_id: @booking.product_id)) do |form| %>
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating, class: 'form-control' %>
+  </div>
 
-<%= form_with(model: [@booking, ProductRating.new]) do |form| %>
-  <%= form.label :value, "Rating (1-5)" %>
-  <%= form.number_field :value, in: 1..5 %>
+  <div class="field">
+    <%= form.label :comment %>
+    <%= form.text_area :comment, class: 'form-control' %>
+  </div>
 
-  <%= form.label :content, "Comment" %>
-  <%= form.text_area :content %>
-
-  <%= form.submit "Submit Rating and Comment" %>
+  <div class="actions">
+    <%= form.submit "Submit", class: 'btn btn-primary' %>
+  </div>
 <% end %>

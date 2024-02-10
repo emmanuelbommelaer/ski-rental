@@ -1,8 +1,10 @@
 class BookingsController < ApplicationController
-  before_action :comment
+  # before_action :comment
   def new
     @booking = Booking.new
+    @product_rating = ProductRating.new
   end
+
 
   def create
     @product = Product.find(params[:product_id])
@@ -20,7 +22,9 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.where(user: current_user)
+    # @bookings = Booking.where(user: current_user)
+    @bookings = Booking.all
+    @product_rating = ProductRating.new
   end
 
   def sales_index
