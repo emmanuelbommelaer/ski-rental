@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :bookings, only: [:new, :create]
-    resources :ratings, only: [:new, :create]
   end
 
 
@@ -18,6 +17,10 @@ Rails.application.routes.draw do
   get "/rentals", to: "bookings#rentals_index", as: :rentals
 
   get "products/users/:id", to: "products#index_for_user", as: :user_products
+
+  get "bookings/:id/ratings/new", to: "ratings#new", as: :new_rating
+
+  post "bookings/:id/ratings", to: "ratings#create", as: :booking_ratings
 
 
 end
