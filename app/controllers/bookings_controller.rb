@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.product = @product
     @booking.status = "Pending"
     if @booking.save
-      flash[:success] = "Object successfully created"
+      flash[:success] = "Booking was successfully created"
       redirect_to bookings_path
     else
       flash[:error] = "Something went wrong"
@@ -31,7 +31,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = params[:status]
     @booking.update(booking_params)
-    render "rentals_index", status: :see_other
+    render "/rentals_index", status: :see_other
   end
 
   private

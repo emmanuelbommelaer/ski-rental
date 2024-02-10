@@ -15,21 +15,48 @@
   font-size: inherit;
 }
 
-#searchbox {
-  margin-bottom: 2rem;
-  margin-left: 1.7rem;
-  width: 400px;
-}
-
 #pagination {
   margin: 2rem auto;
   text-align: center;
 }
 
 .search-menu {
+  width: 880px;
+  margin-left: 1.7rem;
+  justify-content: space-around;
+}
+
+.search-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+#range-slider {
+  width: 150px;
+  height: 20px;
+}
+
+.ais-RefinementList-list {
   display: flex;
 }
 
-// .ais-RefinementList-list {
-//   display: flex;
-// }
+.ais-RefinementList-item {
+  margin-right: 16px;
+}
+
+.rheostat-progress {
+  background-color: $yellow !important;
+}
+
+.rheostat-horizontal {
+  margin-top: 12px !important;
+}
+
+.category-picker, .price-picker {
+  display: flex;
+  .category-tag, .price-tag {
+    margin-right: 12px;
+    height: 28px;
+  }
+}

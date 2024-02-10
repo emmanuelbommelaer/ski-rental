@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+const { rangeSlider } = instantsearch.widgets;
 
 // Connects to data-controller="search"
 export default class extends Controller {
@@ -23,6 +24,15 @@ export default class extends Controller {
       instantsearch.widgets.refinementList({
         container: '#filter-list',
         attribute: 'category',
+      }),
+
+      rangeSlider({
+        container: '#range-slider',
+        attribute: 'price_per_day',
+        min: 5,
+        max: 50,
+        tooltips: true,
+        pips: false
       }),
 
       instantsearch.widgets.hits({
