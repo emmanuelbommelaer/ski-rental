@@ -3,16 +3,16 @@
     <h2 class="mb-4">All my bookings</h2>
     <%= link_to "Back to products", products_path %>
   </div>
-    <% if @bookings.length >= 1 %>
-      <% @bookings.each do |b| %>
-        <div class="booking-line row">
-          <div class="col-1">
-            <%= cl_image_tag(b.product.photo.key,
-                              :background=>"#F4F4F4",
-                              width: 60,
-                              height: 60,
-                              crop: :fill) %>
-          </div>
+  <% if @bookings.length >= 1 %>
+    <% @bookings.each do |b| %>
+      <div class="booking-line row">
+        <div class="col-1">
+          <%= cl_image_tag(b.product.photo.key,
+                            :background=>"#F4F4F4",
+                            width: 60,
+                            height: 60,
+                            crop: :fill) %>
+        </div>
         <div class="col-1">
           <%= b.product.name %>
         </div>
@@ -36,12 +36,18 @@
         <div class="col-1" data-controller="validate">
           <span data-validate-target="tag" class="status-tag d-none"><%= b.status %></span>
         </div>
-      </div>
-      <% end %>
-    <% else %>
-      <div>
-        <p>You haven't booked any equipment yet.</p>
+        <div class="mt-2">
+          <% if b.rating.rating %>
+            You rated this booking: <%= b.rating.rating %>
+          <% else %>
+            <%= link_to "Add a rating", new_rating_path(b) %>
+          <% end %>
+        </div>
       </div>
     <% end %>
-  </div>
+  <% else %>
+    <div>
+      <p>You haven't booked any equipment yet.</p>
+    </div>
+  <% end %>
 </div>

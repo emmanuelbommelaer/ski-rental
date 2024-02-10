@@ -2,6 +2,7 @@ class Booking < ApplicationRecord
   BOOKING_STATUS = %w(Pending Accepted Declined)
   belongs_to :user
   belongs_to :product
+  has_one :rating
 
   validates :status, presence: true, inclusion: { in: BOOKING_STATUS }
   validates :message, presence: true

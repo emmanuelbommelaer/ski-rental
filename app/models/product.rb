@@ -54,4 +54,8 @@ class Product < ApplicationRecord
     end
     return output
   end
+
+  def average_rate
+    # define method to calculate average_rate from all Bookings of a Product
+  end
 end

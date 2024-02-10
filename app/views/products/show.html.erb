@@ -29,19 +29,4 @@
     </div>
   </div>
   <%= link_to "Back to products", products_path %>
-<% if @product.rating %>
-  <p>Current Rating: <%= @product.rating %></p>
-<% else %>
-  <p>No rating yet.</p>
-<% end %>
-
-<% if current_user %>
-  <%= form_with(url: product_ratings_path(@product), method: :post) do |f| %>
-    <%= f.label :rating %>
-    <%= f.number_field :rating, in: 1..5 %>
-    <%= f.submit "Submit Rating" %>
-  <% end %>
-<% else %>
-  <p>Please sign in to rate this product.</p>
-<% end %>
 </div>
