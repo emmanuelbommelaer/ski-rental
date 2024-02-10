@@ -3,37 +3,45 @@
     <h2 class="mb-4">All my bookings</h2>
     <%= link_to "Back to products", products_path %>
   </div>
-    <% @bookings.each do |b| %>
-      <div class="booking-line row">
+    <% if @bookings.length >= 1 %>
+      <% @bookings.each do |b| %>
+        <div class="booking-line row">
+          <div class="col-1">
+            <%= cl_image_tag(b.product.photo.key,
+                              :background=>"#F4F4F4",
+                              width: 60,
+                              height: 60,
+                              crop: :fill) %>
+          </div>
         <div class="col-1">
-          <%= cl_image_tag(b.product.photo.key,
-                            :background=>"#F4F4F4",
-                            width: 60,
-                            height: 60,
-                            crop: :fill) %>
+          <%= b.product.name %>
         </div>
-      <div class="col-1">
-        <%= b.product.name %>
+        <div class="col-1">
+          <span class="category-tag"><%= b.product.category %></span>
+        </div>
+        <div class="col-2">
+          <%= "From #{b.start_date.strftime("%d/%m/%Y")} to #{b.end_date.strftime("%d/%m/%Y")}" %>
+        </div>
+        <div class="col-2">
+          <div class="price-tag" style="font-size:14px">
+            Total cost: <%= b.total_price %>
+          </div>
+        </div>
+        <div class="col-2">
+          Owner: <%= b.product.user.first_name %> <%= b.product.user.last_name %>
+        </div>
+        <div class="col-2">
+          Address: <%= b.user.address %>
+        </div>
+        <div class="col-1" data-controller="validate">
+          <span data-validate-target="tag" class="status-tag d-none"><%= b.status %></span>
+        </div>
       </div>
-      <div class="col-1">
-        <span class="category-tag"><%= b.product.category %></span>
+      <% end %>
+    <% else %>
+      <div>
+        <p>You haven't booked any equipment yet.</p>
       </div>
-      <div class="col-2">
-        <%= "From #{b.start_date.strftime("%d/%m/%Y")} to #{b.end_date.strftime("%d/%m/%Y")}" %>
-      </div>
-      <div class="col-2">
-        Total cost: <%= b.total_price %>
-      </div>
-      <div class="col-2">
-        Owner: <%= b.product.user.first_name %> <%= b.product.user.last_name %>
-      </div>
-      <div class="col-2">
-        Address: <%= b.user.address %>
-      </div>
-      <div class="col-1" data-controller="validate">
-        <span data-validate-target="tag" class="status-tag d-none"><%= b.status %></span>
-      </div>
-    </div>
     <% end %>
   </div>
 </div>
