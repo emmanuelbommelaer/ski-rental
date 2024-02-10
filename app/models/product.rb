@@ -43,4 +43,15 @@ class Product < ApplicationRecord
     customRanking ['desc(rating)']
   end
 
+  def booked_dates
+    output = []
+    self.bookings.each do |b|
+      date = b.start_date
+      while date < b.end_date
+        output << date
+        date = date.next_day
+      end
+    end
+    return output
+  end
 end

@@ -3,7 +3,15 @@ import flatpickr from "flatpickr";
 
 // Connects to data-controller="datepicker"
 export default class extends Controller {
+  static values = {
+    booked: Array
+  }
+
   connect() {
-    flatpickr(this.element)
+    console.log(this.bookedValue)
+    flatpickr(this.element,
+      {
+        disable: this.bookedValue
+      })
   }
 }

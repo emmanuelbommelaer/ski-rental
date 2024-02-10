@@ -1,10 +1,10 @@
 <%= simple_form_for [@product, @booking] do |f| %>
   <%= f.input :start_date,
               as: :string,
-              input_html: {data: {controller: "datepicker"}} %>
+              input_html: {data: {controller: "datepicker", datepicker_booked_value: @product.booked_dates}} %>
   <%= f.input :end_date,
               as: :string,
-              input_html: {data: {controller: "datepicker"}} %>
+              input_html: {data: {controller: "datepicker", datepicker_booked_value: @product.booked_dates}} %>
   <%= f.input :message, as: :text %>
   <div class="d-grid mt-4">
     <%= f.button :submit, class:"btn btn-primary" %>
