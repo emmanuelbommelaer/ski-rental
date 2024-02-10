@@ -15,8 +15,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @booking = Booking.new
     @booked_dates = @product.booked_dates
+    @booking = Booking.new
   end
 
   def index_owned
