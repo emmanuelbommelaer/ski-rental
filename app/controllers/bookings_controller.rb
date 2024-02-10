@@ -31,12 +31,12 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = params[:status]
     @booking.update(booking_params)
-    render "/bookings/rentals_index", status: :see_other
+    render "/rentals_index", status: :see_other
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :start_date, :end_date, :product_id)
+    params.require(:booking).permit(:status, :start_date, :end_date, :product_id, :message)
   end
 end
