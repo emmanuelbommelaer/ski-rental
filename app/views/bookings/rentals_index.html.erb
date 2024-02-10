@@ -23,10 +23,11 @@
           <%= "From #{b.start_date.strftime("%d/%m/%Y")} to #{b.end_date.strftime("%d/%m/%Y")}" %>
         </div>
         <div class="col-2">
-          Total cost: <%= b.total_price %>
+          <div class="price-tag" style="font-size:14px">Total earnings: <%= b.total_price %>
+          </div>
         </div>
         <div class="col-2">
-          To: <%= b.user.first_name %> <%= b.user.last_name %>
+          Requester: <%= b.user.first_name %> <%= b.user.last_name %>
         </div>
         <div class="col-2 d-flex">
           <div>
