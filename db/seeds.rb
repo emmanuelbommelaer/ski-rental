@@ -135,6 +135,7 @@ booking.product = Product.find_by_name("Aurora boots")
 booking.status = "Pending"
 booking.start_date = DateTime.current + 31
 booking.end_date = DateTime.current + 33
+booking.message = "I hope this message finds you well. I'm writing to confirm my booking for ski rental through your marketplace."
 booking.save!
 
 booking = Booking.new()
@@ -143,8 +144,8 @@ booking.product = Product.find_by_name("Black boots")
 booking.status = "Pending"
 booking.start_date = DateTime.current + 33
 booking.end_date = DateTime.current + 40
+booking.message = "I hope this message finds you well. I'm writing to confirm my booking for ski rental through your marketplace."
 booking.save!
-
 
 booking = Booking.new()
 booking.user = emily
@@ -152,6 +153,7 @@ booking.product = Product.find_by_name("Hype snowboard")
 booking.status = "Pending"
 booking.start_date = DateTime.current + 32
 booking.end_date = DateTime.current + 38
+booking.message = "I hope this message finds you well. I'm writing to confirm my booking for ski rental through your marketplace."
 booking.save!
 
 booking = Booking.new()
@@ -160,4 +162,5 @@ booking.product = Product.find_by_name("Mc Kinley")
 booking.status = "Pending"
 booking.start_date = DateTime.current + 32
 booking.end_date = DateTime.current + 38
+booking.message = "I hope this message finds you well. I'm writing to confirm my booking for ski rental through your marketplace."
 booking.save!
