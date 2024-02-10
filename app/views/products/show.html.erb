@@ -7,6 +7,14 @@
                         :background=>"#F4F4F4",
                         width: 350,
                         crop: :fill) %>
+      <div class="mt-3">
+        <% unless @product.average_rate == "" %>
+          <span class="fs-5">Average rating: </span>
+          <span class="rating-tag"><%= @product.average_rate %></span>
+        <% else %>
+          <span class="fs-5">No ratings for this product yet.</span>
+        <% end  %>
+      </div>
     </div>
     <div class="col-4 product-show-details">
       <div class="product-show-details-top">

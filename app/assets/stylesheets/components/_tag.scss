@@ -35,6 +35,19 @@
   text-align: center;
 }
 
+.rating-tag {
+  margin-left: 12px;
+  border-radius: 20px;
+  background-color: $green;
+  padding: 4px 12px;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  // min-width: 60px;
+  display: inline-block;
+  text-align: center;
+}
+
 .col2 .price-tag {
   font-size: 16px;
 }
