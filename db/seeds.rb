@@ -246,6 +246,27 @@ booking.status = "Pending"
 booking.start_date = DateTime.current + 31
 booking.end_date = DateTime.current + 33
 booking.message = "I hope this message finds you well. I'm writing to confirm my booking for ski rental through your marketplace."
+booking.rating = Rating.create(booking: booking, comment: "ok", rating: 3)
+booking.save!
+
+booking = Booking.new()
+booking.user = emily
+booking.product = Product.find_by_name("Raindancer BASIC")
+booking.status = "Pending"
+booking.start_date = DateTime.current + 31
+booking.end_date = DateTime.current + 33
+booking.message = "I hope this message finds you well. I'm writing to confirm my booking for ski rental through your marketplace."
+booking.rating = Rating.create(booking: booking, comment: "perfect", rating: 5)
+booking.save!
+
+booking = Booking.new()
+booking.user = manu
+booking.product = Product.find_by_name("Raindancer BASIC")
+booking.status = "Pending"
+booking.start_date = DateTime.current + 31
+booking.end_date = DateTime.current + 33
+booking.message = "I hope this message finds you well. I'm writing to confirm my booking for ski rental through your marketplace."
+booking.rating = Rating.create(booking: booking, comment: "disappointed", rating: 4)
 booking.save!
 
 booking = Booking.new()

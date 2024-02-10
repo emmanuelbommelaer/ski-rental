@@ -56,6 +56,17 @@ class Product < ApplicationRecord
   end
 
   def average_rate
+    all_ratings = []
+    self.bookings.each do |b|
+      if b.rating
+        all_ratings << b.rating.rating
+      end
+    end
+    if all_ratings.empty?
+      return ""
+    else
+      all_ratings.inject{ |sum, el| sum + el }.to_f / all_ratings.size
+    end
     # define method to calculate average_rate from all Bookings of a Product
   end
 end
