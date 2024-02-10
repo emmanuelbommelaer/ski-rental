@@ -1,11 +1,4 @@
 import { Controller } from "@hotwired/stimulus"
-
-// import { createDropdown } from './Dropdown'
-// const myFacetDropdown = createDropdown(
-//   instantsearch.widgets.refinementList,
-//   { /* optional settings */ }
-// );
-
 const { rangeSlider } = instantsearch.widgets;
 
 // Connects to data-controller="search"

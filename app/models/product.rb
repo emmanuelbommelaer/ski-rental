@@ -26,6 +26,15 @@ class Product < ApplicationRecord
       self.user.address.split.last
     end
 
+    add_attribute :latitude do
+      self.user.latitude
+    end
+
+    add_attribute :longitude do
+      self.user.longitude
+    end
+
+
     searchableAttributes ['name', 'category', 'details', 'address']
 
     attributesForFaceting ['category', 'address']

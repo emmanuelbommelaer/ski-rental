@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @booking.product = @product
     @booking.status = "Pending"
     if @booking.save
-      flash[:success] = "Object successfully created"
+      flash[:success] = "Booking was successfully created"
       redirect_to bookings_path
     else
       flash[:error] = "Something went wrong"

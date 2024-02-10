@@ -3,8 +3,16 @@
     <div class="container" data-controller="search" data-search-index-value="<%= ENV['ALGOLIA_INDEX'] %>">
       <div class=search-menu>
         <div id="searchbox"></div>
-        <div id="filter-list"></div>
-        <div id="range-slider"></div>
+        <div class="search-options">
+          <div class="category-picker">
+            <div class="category-tag">Choose Category</div>
+            <div id="filter-list"></div>
+          </div>
+          <div class="price-picker">
+            <div class="price-tag">Filter by price</div>
+            <div id="range-slider"></div>
+          </div>
+        </div>
       </div>
       <div id="hits"></div>
     </div>
